@@ -1,0 +1,14 @@
+---
+resources:
+- name: sandbox
+  type: git
+  source:
+    uri: https://github.com/vspiewak/concourse-ci-sandbox.git
+
+jobs:
+- name: job-test
+  public: true
+  plan:
+  - get: sandbox
+  - task: test
+    file: task_test.yml
