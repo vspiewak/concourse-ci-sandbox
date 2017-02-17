@@ -13,6 +13,13 @@ jobs:
     trigger: true
   - task: checkstyle
     file: sandbox/task_checkstyle.yml
+- name: job-debug-env
+  public: true
+  plan:
+  - get: sandbox
+    trigger: true
+  - task: debug-env
+    file: sandbox/task_debug_env.yml
 - name: job-test
   public: true
   plan:
