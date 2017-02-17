@@ -6,5 +6,5 @@ image_resource:
   source: {repository: busybox}
 
 run:
-  path: ./fakeNPM.sh
+  path: ./sandbox/fakeNPM.sh
   args: [test]
