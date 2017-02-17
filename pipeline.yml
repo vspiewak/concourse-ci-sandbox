@@ -11,5 +11,7 @@ jobs:
   plan:
   - get: sandbox
     trigger: true
+  - task: checkstyle
+    file: sandbox/task_checkstyle.yml
   - task: test
     file: sandbox/task_test.yml
