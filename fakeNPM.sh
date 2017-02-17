@@ -10,6 +10,10 @@ usage(){
 
 while [[ $# -gt 0 ]] ; do
    case $1 in
+      "checkstyle")
+      echo "check coding conventions..."
+      echo "conventions ok"
+      ;;
       "test")
       echo "testing..."
       echo "test ok"
@@ -17,6 +21,9 @@ while [[ $# -gt 0 ]] ; do
       "build")
       echo "building..."
       echo "build ok"
+      ;;
+      "package")
+      zip -r pkg.zip . 
       ;;
       "help")
       usage
