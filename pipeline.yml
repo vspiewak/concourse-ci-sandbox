@@ -25,5 +25,6 @@ jobs:
   plan:
   - get: sandbox
     trigger: true
+    passed: [job-checkstyle, job-test]
   - task: buid
     file: sandbox/task_build.yml
