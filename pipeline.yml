@@ -6,12 +6,24 @@ resources:
     uri: https://github.com/vspiewak/concourse-ci-sandbox.git
 
 jobs:
-- name: job-test
+- name: job-checkstyle
   public: true
   plan:
   - get: sandbox
     trigger: true
   - task: checkstyle
     file: sandbox/task_checkstyle.yml
+- name: job-test
+  public: true
+  plan:
+  - get: sandbox
+    trigger: true
   - task: test
     file: sandbox/task_test.yml
+- name: job-build
+  public: true
+  plan:
+  - get: sandbox
+    trigger: true
+  - task: buid
+    file: sandbox/task_build.yml
