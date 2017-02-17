@@ -10,5 +10,6 @@ jobs:
   public: true
   plan:
   - get: sandbox
+    trigger: true
   - task: test
-    file: task_test.yml
+    file: sandbox/task_test.yml
